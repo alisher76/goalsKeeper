@@ -31,16 +31,8 @@ class GoalsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        fetchGoalData { (success) in
-            if success {
-                print("gotGoals")
-                self.tableView.reloadData()
-                self.tableView.isHidden = false
-            } else {
-                self.tableView.isHidden = true
-            }
-        }
+        fetchCoreDataObjects()
+        tableView.reloadData()
     }
 
     @IBAction func addGoalTapped(_ sender: Any) {
@@ -57,17 +49,51 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if goalsArray.count != 0 {
-            return goalsArray.count
-        } else {
-            return 0
-        }
+        return goalsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as? GoalCell else { return UITableViewCell() }
-        cell.configureCell(description: String(describing: goalsArray[indexPath.row].goalDescription!), type:  goalsArray[indexPath.row].goalType!, goalProgressAmount: Int(goalsArray[indexPath.row].goalProgress))
+        let goal = goalsArray[indexPath.row]
+        cell.configureCell(description: String(describing: goal.goalDescription!), type:  goal.goalType!, goalProgressAmount: Int(goal.goalProgress))
         return cell
+    }
+    
+    // to be able to edit tableview
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
+            self.removeGoal(atIndexPath: indexPath)
+            self.fetchCoreDataObjects()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        
+        let addProgress = UITableViewRowAction(style: .destructive, title: "ADD POINT") { (rowAction, indexPath) in
+            
+        }
+        
+        addProgress.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        
+        return [deleteAction]
+    }
+    
+    func fetchCoreDataObjects() {
+        fetchGoalData { (success) in
+            if success {
+                self.tableView.isHidden = false
+            } else {
+                self.tableView.isHidden = true
+            }
+        }
     }
 }
 
@@ -84,6 +110,18 @@ extension GoalsVC {
         } catch {
             debugPrint(error.localizedDescription)
             completion(false)
+        }
+    }
+    
+    func removeGoal(atIndexPath indexPath: IndexPath) {
+        guard let managedContext = appdelegate?.persistentContainer
+            .viewContext else { return }
+        managedContext.delete(goalsArray[indexPath.row])
+        do {
+            try managedContext.save()
+            print("Successfully removed from managed context")
+        } catch {
+            print("Could not remove: \(error.localizedDescription)")
         }
     }
     
