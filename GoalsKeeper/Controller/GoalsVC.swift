@@ -74,7 +74,6 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         
         let addProgress = UITableViewRowAction(style: .destructive, title: "ADD POINT") { (rowAction, indexPath) in
