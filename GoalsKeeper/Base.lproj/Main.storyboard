@@ -1,24 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Farah.ttc">
+            <string>Farah</string>
+        </array>
+        <array key="Futura.ttc">
+            <string>Futura-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--GoalsVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GoalsVC" customModule="GoalsKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVV-yh-8W1" customClass="GradientView" customModule="GoalsKeeper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="52i-yy-WQp">
+                                        <rect key="frame" x="20" y="70.333333333333329" width="159.33333333333334" height="44.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpU-yC-lyb">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="44.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="34"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keeper" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K42-iG-Zjp">
+                                                <rect key="frame" x="92" y="22.333333333333343" width="67.333333333333314" height="22"/>
+                                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="22"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-nS-bqT">
+                                        <rect key="frame" x="320" y="75" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="ih6-pL-CQN"/>
+                                            <constraint firstAttribute="height" constant="35" id="oV4-z3-ZdV"/>
+                                        </constraints>
+                                        <state key="normal" image="addGoal"/>
+                                        <connections>
+                                            <action selector="addGoalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y7I-7q-Qod"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1Of-nS-bqT" secondAttribute="trailing" constant="20" id="4BB-ib-ar5"/>
+                                    <constraint firstAttribute="height" constant="145" id="SZT-mw-bih"/>
+                                    <constraint firstItem="52i-yy-WQp" firstAttribute="leading" secondItem="bVV-yh-8W1" secondAttribute="leading" constant="20" id="iZ8-g9-seh"/>
+                                    <constraint firstItem="52i-yy-WQp" firstAttribute="centerY" secondItem="bVV-yh-8W1" secondAttribute="centerY" constant="20" id="mT9-6X-kL6"/>
+                                    <constraint firstItem="1Of-nS-bqT" firstAttribute="centerY" secondItem="52i-yy-WQp" secondAttribute="centerY" id="pei-A7-woq"/>
+                                </constraints>
+                            </view>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EiN-IA-dBM">
+                                <rect key="frame" x="0.0" y="145" width="375" height="633"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" rowHeight="70" id="OsL-c0-868" customClass="GoalCell" customModule="GoalsKeeper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OsL-c0-868" id="s6o-Wj-swo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lqQ-Th-shK">
+                                                    <rect key="frame" x="20" y="0.0" width="298" height="69.666666666666671"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vdy-9g-xxn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="216.66666666666666" height="35"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVi-Q9-ULq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="35"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eat Healthy for a week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-eD-e0N">
+                                                                    <rect key="frame" x="49.666666666666686" y="0.0" width="167" height="35"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d5X-V1-z9I">
+                                                            <rect key="frame" x="0.0" y="35" width="120.66666666666667" height="34.666666666666657"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylH-2H-mZc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="39.333333333333336" height="34.666666666666664"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                                    <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="short term" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGM-nb-pwf">
+                                                                    <rect key="frame" x="47.333333333333336" y="0.0" width="73.333333333333314" height="34.666666666666664"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                                    <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="iKH-J5-Qlh">
+                                                    <rect key="frame" x="328" y="19" width="40" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="6kE-bc-UBi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <color key="textColor" red="0.0014997165419999999" green="0.79950964449999995" blue="0.67305707930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="iKH-J5-Qlh" secondAttribute="bottom" constant="8" id="7y3-ps-oiI"/>
+                                                <constraint firstItem="lqQ-Th-shK" firstAttribute="leading" secondItem="s6o-Wj-swo" secondAttribute="leading" constant="20" id="DcI-Xr-UEe"/>
+                                                <constraint firstItem="iKH-J5-Qlh" firstAttribute="leading" secondItem="lqQ-Th-shK" secondAttribute="trailing" constant="10" id="Kfh-v1-ahG"/>
+                                                <constraint firstItem="iKH-J5-Qlh" firstAttribute="top" secondItem="s6o-Wj-swo" secondAttribute="topMargin" constant="8" id="SqR-q6-8LY"/>
+                                                <constraint firstItem="lqQ-Th-shK" firstAttribute="top" secondItem="s6o-Wj-swo" secondAttribute="top" id="e2z-0g-E9e"/>
+                                                <constraint firstItem="iKH-J5-Qlh" firstAttribute="trailing" secondItem="s6o-Wj-swo" secondAttribute="trailingMargin" constant="8" id="fOj-Zb-HMZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="lqQ-Th-shK" secondAttribute="bottom" id="ffE-pe-3s3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="goalDescriptionLabel" destination="yXc-eD-e0N" id="nXO-5a-UJm"/>
+                                            <outlet property="goalNumberLabel" destination="iKH-J5-Qlh" id="i2d-Rd-blL"/>
+                                            <outlet property="goalTypeLabel" destination="AGM-nb-pwf" id="7Sj-O9-i2k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="igA-3d-eFC">
+                                <rect key="frame" x="4" y="205" width="367" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Goals keeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aol-P7-ugP">
+                                        <rect key="frame" x="0.0" y="0.0" width="367" height="22"/>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="22"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to begin tap on add goal icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5i-w9-o4G">
+                                        <rect key="frame" x="0.0" y="26" width="367" height="16"/>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="16"/>
+                                        <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EiN-IA-dBM" firstAttribute="top" secondItem="bVV-yh-8W1" secondAttribute="bottom" id="0R4-U1-GON"/>
+                            <constraint firstItem="igA-3d-eFC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="4" id="1V0-Oa-S3m"/>
+                            <constraint firstItem="igA-3d-eFC" firstAttribute="top" secondItem="bVV-yh-8W1" secondAttribute="bottom" constant="60" id="5Fw-Il-4T2"/>
+                            <constraint firstItem="EiN-IA-dBM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QRE-z9-z91"/>
+                            <constraint firstItem="bVV-yh-8W1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QjE-cj-5bh"/>
+                            <constraint firstItem="EiN-IA-dBM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W66-Gj-7r7"/>
+                            <constraint firstItem="bVV-yh-8W1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZxE-0x-3x7"/>
+                            <constraint firstItem="igA-3d-eFC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gwa-uQ-gU5"/>
+                            <constraint firstItem="bVV-yh-8W1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jpA-Ep-Ugj"/>
+                            <constraint firstItem="EiN-IA-dBM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oGa-JT-hlP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="EiN-IA-dBM" id="0Lf-dG-589"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="36" y="33.990147783251231"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addGoal" width="35" height="32"/>
+    </resources>
 </document>
