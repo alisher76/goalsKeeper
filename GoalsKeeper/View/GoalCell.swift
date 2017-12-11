@@ -19,10 +19,10 @@ class GoalCell: UITableViewCell {
         // Initialization code
     }
 
-    func configureCell(description: String, type: GoalType, goalProgressAmount: Int) {
+    func configureCell(description: String, type: String, goalProgressAmount: Int) {
         
         self.goalDescriptionLabel.text = description
-        self.goalTypeLabel.text = type.rawValue
+        self.goalTypeLabel.text = type
         self.goalNumberLabel.text = String(describing: goalProgressAmount)
     }
 }
