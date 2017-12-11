@@ -15,6 +15,7 @@
             <string>Farah</string>
         </array>
         <array key="Futura.ttc">
+            <string>Futura-Bold</string>
             <string>Futura-Medium</string>
         </array>
     </customFonts>
@@ -69,31 +70,31 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="igA-3d-eFC" userLabel="welcomeMessageStack">
-                                <rect key="frame" x="4" y="205" width="367" height="42"/>
+                                <rect key="frame" x="4" y="205" width="367" height="53.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Goals keeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aol-P7-ugP">
-                                        <rect key="frame" x="0.0" y="0.0" width="367" height="22"/>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="367" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to begin tap on add goal icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5i-w9-o4G">
-                                        <rect key="frame" x="0.0" y="26" width="367" height="16"/>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="32.666666666666657" width="367" height="21"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EiN-IA-dBM">
-                                <rect key="frame" x="0.0" y="145" width="375" height="633"/>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EiN-IA-dBM">
+                                <rect key="frame" x="0.0" y="150" width="375" height="628"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" rowHeight="70" id="OsL-c0-868" customClass="GoalCell" customModule="GoalsKeeper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OsL-c0-868" id="s6o-Wj-swo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lqQ-Th-shK">
@@ -144,8 +145,34 @@
                                                     <color key="textColor" red="0.0014997165419999999" green="0.79950964449999995" blue="0.67305707930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mag-Zb-WQv" customClass="GradientView" customModule="GoalsKeeper" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.666666666666671"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOAL COMPLETE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-tx-mJN">
+                                                            <rect key="frame" x="62.666666666666671" y="16.999999999999996" width="251.33333333333331" height="36.666666666666657"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Sdm-tx-mJN" firstAttribute="centerX" secondItem="Mag-Zb-WQv" secondAttribute="centerX" id="6Hd-Vn-84z"/>
+                                                        <constraint firstItem="Sdm-tx-mJN" firstAttribute="centerY" secondItem="Mag-Zb-WQv" secondAttribute="centerY" id="Zpc-LO-FG6"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                                            <color key="value" red="0.0014997165419999999" green="0.79950964449999995" blue="0.67305707930000003" alpha="0.58781035958904104" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                                            <color key="value" red="0.0014997165419999999" green="0.79950964449999995" blue="0.67305707930000003" alpha="0.89766160102739723" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Mag-Zb-WQv" secondAttribute="trailing" id="1lS-RE-uXQ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="iKH-J5-Qlh" secondAttribute="bottom" constant="8" id="7y3-ps-oiI"/>
                                                 <constraint firstItem="lqQ-Th-shK" firstAttribute="leading" secondItem="s6o-Wj-swo" secondAttribute="leading" constant="20" id="DcI-Xr-UEe"/>
                                                 <constraint firstItem="iKH-J5-Qlh" firstAttribute="leading" secondItem="lqQ-Th-shK" secondAttribute="trailing" constant="5" id="Kfh-v1-ahG"/>
@@ -153,9 +180,13 @@
                                                 <constraint firstItem="lqQ-Th-shK" firstAttribute="top" secondItem="s6o-Wj-swo" secondAttribute="top" id="e2z-0g-E9e"/>
                                                 <constraint firstItem="iKH-J5-Qlh" firstAttribute="trailing" secondItem="s6o-Wj-swo" secondAttribute="trailingMargin" id="fOj-Zb-HMZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="lqQ-Th-shK" secondAttribute="bottom" id="ffE-pe-3s3"/>
+                                                <constraint firstAttribute="bottom" secondItem="Mag-Zb-WQv" secondAttribute="bottom" id="fvn-QQ-5ZG"/>
+                                                <constraint firstItem="Mag-Zb-WQv" firstAttribute="top" secondItem="s6o-Wj-swo" secondAttribute="top" id="gtZ-VL-3xO"/>
+                                                <constraint firstItem="Mag-Zb-WQv" firstAttribute="leading" secondItem="s6o-Wj-swo" secondAttribute="leading" id="yZs-bC-tkD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completedView" destination="Mag-Zb-WQv" id="JEN-vL-BJ9"/>
                                             <outlet property="goalDescriptionLabel" destination="yXc-eD-e0N" id="nXO-5a-UJm"/>
                                             <outlet property="goalNumberLabel" destination="iKH-J5-Qlh" id="i2d-Rd-blL"/>
                                             <outlet property="goalTypeLabel" destination="AGM-nb-pwf" id="7Sj-O9-i2k"/>
@@ -166,7 +197,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EiN-IA-dBM" firstAttribute="top" secondItem="bVV-yh-8W1" secondAttribute="bottom" id="0R4-U1-GON"/>
+                            <constraint firstItem="EiN-IA-dBM" firstAttribute="top" secondItem="bVV-yh-8W1" secondAttribute="bottom" constant="5" id="0R4-U1-GON"/>
                             <constraint firstItem="igA-3d-eFC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="4" id="1V0-Oa-S3m"/>
                             <constraint firstItem="igA-3d-eFC" firstAttribute="top" secondItem="bVV-yh-8W1" secondAttribute="bottom" constant="60" id="5Fw-Il-4T2"/>
                             <constraint firstItem="EiN-IA-dBM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QRE-z9-z91"/>
@@ -269,7 +300,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-1P-Lvz">
                                 <rect key="frame" x="20" y="733" width="335" height="45"/>
-                                <color key="backgroundColor" red="0.0014997165419999999" green="0.79950964449999995" blue="0.67305707930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IT6-1V-gbB"/>
                                 </constraints>

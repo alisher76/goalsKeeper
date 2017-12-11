@@ -15,6 +15,7 @@ class GoalsVC: UIViewController {
     @IBOutlet weak var welcomeMessageLabel: UILabel!
     @IBOutlet weak var welcomeMessageLabel2: UILabel!
     
+    
     var goalsArray: [Goal] = [] {
         didSet {
             print(goalsArray.count)
@@ -55,7 +56,7 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as? GoalCell else { return UITableViewCell() }
         let goal = goalsArray[indexPath.row]
-        cell.configureCell(description: String(describing: goal.goalDescription!), type:  goal.goalType!, goalProgressAmount: Int(goal.goalProgress))
+        cell.configureCell(goal: goal)
         return cell
     }
     
@@ -76,13 +77,14 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         }
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         
-        let addProgress = UITableViewRowAction(style: .destructive, title: "ADD POINT") { (rowAction, indexPath) in
-            
+        let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
+            self.setProgress(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         
-        addProgress.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        addAction.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         
-        return [deleteAction]
+        return [deleteAction, addAction]
     }
     
     func fetchCoreDataObjects() {
@@ -92,6 +94,25 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 self.tableView.isHidden = true
             }
+        }
+    }
+    
+    func setProgress(atIndexPath indexPath: IndexPath ) {
+        guard let managedContext = appdelegate?.persistentContainer.viewContext else { return }
+        
+        let chosenGoal = goalsArray[indexPath.row]
+        
+        if chosenGoal.goalProgress < chosenGoal.goalCompletionValue {
+           chosenGoal.goalProgress = chosenGoal.goalProgress + 1
+        } else {
+            return
+        }
+        
+        do {
+            try managedContext.save()
+            print("Successfully set progress")
+        } catch {
+            debugPrint("Could not set progress")
         }
     }
 }
@@ -109,6 +130,9 @@ extension GoalsVC {
         } catch {
             debugPrint(error.localizedDescription)
             completion(false)
+        }
+        if goalsArray.count == 0 {
+            self.tableView.isHidden = true
         }
     }
     
