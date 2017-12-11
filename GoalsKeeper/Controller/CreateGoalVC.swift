@@ -24,6 +24,7 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextBtn.bindKeyboard()
+        segmentControll.bindKeyboard()
         textView.delegate = self
         nextBtn.layer.cornerRadius = 5.0
     }

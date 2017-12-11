@@ -264,7 +264,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8lZ-RS-7Td">
-                                <rect key="frame" x="20" y="154.99999999999997" width="335" height="292.33333333333326"/>
+                                <rect key="frame" x="20" y="155" width="335" height="220"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What is the goal 😊?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dL6-WU-taw">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="220"/>
@@ -276,30 +276,10 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2es-d1-MNu">
-                                        <rect key="frame" x="0.0" y="225" width="335" height="22.333333333333343"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i93-Ii-0vT">
-                                        <rect key="frame" x="0.0" y="252.33333333333331" width="335" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="E38-Rn-kbG"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="SHORT TERM"/>
-                                            <segment title="LONG TERM"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.0014997165419999999" green="0.79950964449999995" blue="0.67305707930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="segmentChanged:" destination="F1h-MD-YPl" eventType="valueChanged" id="YaW-ig-sDW"/>
-                                        </connections>
-                                    </segmentedControl>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-1P-Lvz">
-                                <rect key="frame" x="20" y="733" width="335" height="45"/>
+                                <rect key="frame" x="20" y="728" width="335" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IT6-1V-gbB"/>
@@ -312,6 +292,20 @@
                                     <action selector="nextBtnTapped:" destination="F1h-MD-YPl" eventType="touchUpInside" id="eCV-bI-IRe"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i93-Ii-0vT">
+                                <rect key="frame" x="20" y="678" width="335" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="E38-Rn-kbG"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="SHORT TERM"/>
+                                    <segment title="LONG TERM"/>
+                                </segments>
+                                <color key="tintColor" red="0.42038959665225639" green="0.79950964449999995" blue="0.60479764986537354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="F1h-MD-YPl" eventType="valueChanged" id="YaW-ig-sDW"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -321,9 +315,12 @@
                             <constraint firstItem="4lu-VF-kld" firstAttribute="trailing" secondItem="XX7-ad-Fdn" secondAttribute="trailing" id="FbI-Th-pR8"/>
                             <constraint firstItem="XX7-ad-Fdn" firstAttribute="trailing" secondItem="oEW-1P-Lvz" secondAttribute="trailing" constant="20" id="ILF-Vc-BWI"/>
                             <constraint firstItem="4lu-VF-kld" firstAttribute="top" secondItem="YSP-oH-iTk" secondAttribute="top" id="KPN-gj-hdL"/>
+                            <constraint firstItem="i93-Ii-0vT" firstAttribute="leading" secondItem="XX7-ad-Fdn" secondAttribute="leading" constant="20" id="VeD-Zj-7oc"/>
+                            <constraint firstItem="oEW-1P-Lvz" firstAttribute="top" secondItem="i93-Ii-0vT" secondAttribute="bottom" constant="10" id="YVg-ui-dwg"/>
                             <constraint firstItem="oEW-1P-Lvz" firstAttribute="leading" secondItem="XX7-ad-Fdn" secondAttribute="leading" constant="20" id="dPa-I2-Yc9"/>
-                            <constraint firstItem="oEW-1P-Lvz" firstAttribute="bottom" secondItem="XX7-ad-Fdn" secondAttribute="bottom" id="ds3-Qn-UZo"/>
+                            <constraint firstItem="oEW-1P-Lvz" firstAttribute="bottom" secondItem="XX7-ad-Fdn" secondAttribute="bottom" constant="-5" id="ds3-Qn-UZo"/>
                             <constraint firstItem="4lu-VF-kld" firstAttribute="leading" secondItem="XX7-ad-Fdn" secondAttribute="leading" id="mII-AO-7rI"/>
+                            <constraint firstItem="XX7-ad-Fdn" firstAttribute="trailing" secondItem="i93-Ii-0vT" secondAttribute="trailing" constant="20" id="oEu-MY-PL8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XX7-ad-Fdn"/>
                     </view>
@@ -408,7 +405,7 @@
                                 <rect key="frame" x="0.0" y="300" width="375" height="478"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edR-fM-Osu">
-                                        <rect key="frame" x="20" y="433" width="335" height="45"/>
+                                        <rect key="frame" x="20" y="428" width="335" height="45"/>
                                         <color key="backgroundColor" red="0.0014997165419999999" green="0.79950964449999995" blue="0.67305707930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="FFw-iY-N2D"/>
@@ -426,7 +423,7 @@
                                 <constraints>
                                     <constraint firstItem="edR-fM-Osu" firstAttribute="leading" secondItem="aAU-ns-1Jl" secondAttribute="leading" constant="20" id="W3w-8Y-zxk"/>
                                     <constraint firstAttribute="trailing" secondItem="edR-fM-Osu" secondAttribute="trailing" constant="20" id="npG-nT-uEt"/>
-                                    <constraint firstAttribute="bottom" secondItem="edR-fM-Osu" secondAttribute="bottom" id="okZ-Tk-LcI"/>
+                                    <constraint firstAttribute="bottom" secondItem="edR-fM-Osu" secondAttribute="bottom" constant="5" id="okZ-Tk-LcI"/>
                                 </constraints>
                             </view>
                         </subviews>
