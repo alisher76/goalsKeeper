@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FinishGoalVC: UIViewController, UITextFieldDelegate {
 
@@ -24,9 +25,6 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
         pointsTextField.delegate = self
     }
     
-    @IBAction func createBtnTapped(_ sender: Any) {
-        
-    }
     
     @IBAction func backBtnTapped(_ sender: Any) {
         dismissDetail(self)
@@ -40,5 +38,37 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
       textField.text = ""
+    }
+    
+    
+    // Mark: Saving to Core Data
+    func save(completion: (_ finished: Bool) -> ()) {
+        // managed object context from main que
+        guard let managedContext = appdelegate?.persistentContainer.viewContext else { return }
+        let goal = Goal(context: managedContext)
+        
+        goal.goalDescription = goalDescription
+        goal.goalType = goalType.rawValue
+        goal.goalCompletionValue = Int32(pointsTextField.text!)!
+        goal.goalProgress = Int32(0)
+        do {
+            
+            // save - Attempts to commit unsaved changes to registered objects to the context’s parent store.
+            try managedContext.save()
+            completion(true)
+        } catch {
+            debugPrint("could not save: \(error.localizedDescription)")
+            completion(false)
+        }
+    }
+    
+    @IBAction func createBtnTapped(_ sender: Any) {
+        if pointsTextField.text != "" {
+            self.save { (complete) in
+                if complete {
+                    dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
 }

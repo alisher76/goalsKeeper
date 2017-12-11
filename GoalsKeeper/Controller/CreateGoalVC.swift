@@ -8,6 +8,8 @@
 
 import UIKit
 
+let appdelegate = UIApplication.shared.delegate as? AppDelegate
+
 class CreateGoalVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var horizontalSpaceConstantForBackBtn: NSLayoutConstraint!
