@@ -22,7 +22,7 @@
         <!--GoalsVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GoalsVC" customModule="GoalsKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="goalsVC" id="BYZ-38-t0r" customClass="GoalsVC" customModule="GoalsKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lqQ-Th-shK">
-                                                    <rect key="frame" x="20" y="0.0" width="310" height="69.666666666666671"/>
+                                                    <rect key="frame" x="20" y="0.0" width="295" height="69.666666666666671"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vdy-9g-xxn">
                                                             <rect key="frame" x="0.0" y="0.0" width="216.66666666666666" height="35"/>
@@ -136,7 +136,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="iKH-J5-Qlh">
-                                                    <rect key="frame" x="340" y="19" width="40" height="32"/>
+                                                    <rect key="frame" x="320" y="19" width="40" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="6kE-bc-UBi"/>
                                                     </constraints>
@@ -148,10 +148,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="iKH-J5-Qlh" secondAttribute="bottom" constant="8" id="7y3-ps-oiI"/>
                                                 <constraint firstItem="lqQ-Th-shK" firstAttribute="leading" secondItem="s6o-Wj-swo" secondAttribute="leading" constant="20" id="DcI-Xr-UEe"/>
-                                                <constraint firstItem="iKH-J5-Qlh" firstAttribute="leading" secondItem="lqQ-Th-shK" secondAttribute="trailing" constant="10" id="Kfh-v1-ahG"/>
+                                                <constraint firstItem="iKH-J5-Qlh" firstAttribute="leading" secondItem="lqQ-Th-shK" secondAttribute="trailing" constant="5" id="Kfh-v1-ahG"/>
                                                 <constraint firstItem="iKH-J5-Qlh" firstAttribute="top" secondItem="s6o-Wj-swo" secondAttribute="topMargin" constant="8" id="SqR-q6-8LY"/>
                                                 <constraint firstItem="lqQ-Th-shK" firstAttribute="top" secondItem="s6o-Wj-swo" secondAttribute="top" id="e2z-0g-E9e"/>
-                                                <constraint firstItem="iKH-J5-Qlh" firstAttribute="trailing" secondItem="s6o-Wj-swo" secondAttribute="trailingMargin" constant="20" id="fOj-Zb-HMZ"/>
+                                                <constraint firstItem="iKH-J5-Qlh" firstAttribute="trailing" secondItem="s6o-Wj-swo" secondAttribute="trailingMargin" id="fOj-Zb-HMZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="lqQ-Th-shK" secondAttribute="bottom" id="ffE-pe-3s3"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -187,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="36" y="33.990147783251231"/>
         </scene>
-        <!--View Controller-->
+        <!--Create GoalVC-->
         <scene sceneID="dcw-wc-3fW">
             <objects>
-                <viewController storyboardIdentifier="createVC" id="F1h-MD-YPl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createVC" id="F1h-MD-YPl" customClass="CreateGoalVC" customModule="GoalsKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YSP-oH-iTk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,6 +201,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJe-dt-Jif">
                                         <rect key="frame" x="20" y="80" width="14" height="25"/>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBtnTapped:" destination="F1h-MD-YPl" eventType="touchUpInside" id="Uxv-zA-Byv"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="eTu-n4-oyU">
                                         <rect key="frame" x="209.33333333333337" y="70.333333333333329" width="145.66666666666663" height="44.333333333333329"/>
@@ -271,6 +274,9 @@
                                 <state key="normal" title="CREATE">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createBtnTapped:" destination="F1h-MD-YPl" eventType="touchUpInside" id="7eW-9e-nUO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -287,6 +293,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XX7-ad-Fdn"/>
                     </view>
+                    <connections>
+                        <outlet property="createBtn" destination="oEW-1P-Lvz" id="elb-7b-WPM"/>
+                        <outlet property="horizontalSpaceConstantForBackBtn" destination="cgL-HK-8Ak" id="LP4-Za-E08"/>
+                        <outlet property="horizontalSpaceConstantForGoalLabel" destination="vp0-pb-oRL" id="xGi-Ut-Osr"/>
+                        <outlet property="segmentControll" destination="i93-Ii-0vT" id="E5k-Dv-LUc"/>
+                        <outlet property="textView" destination="dL6-WU-taw" id="egT-ej-obG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3e-Qx-azX" sceneMemberID="firstResponder"/>
             </objects>

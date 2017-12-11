@@ -10,12 +10,27 @@ import UIKit
 
 class CreateGoalVC: UIViewController {
 
+    @IBOutlet weak var horizontalSpaceConstantForBackBtn: NSLayoutConstraint!
+    @IBOutlet weak var horizontalSpaceConstantForGoalLabel: NSLayoutConstraint!
+    
+    @IBOutlet weak var createBtn: UIButton!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var segmentControll: UISegmentedControl!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
    
-
+    @IBAction func createBtnTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func backBtnTapped(_ sender: Any) {
+        dismissDetail(self)
+    }
+    
+    
 }

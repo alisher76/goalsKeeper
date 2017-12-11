@@ -18,6 +18,7 @@
 		ACE18F5D1FDEBE090050BE1F /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE18F5C1FDEBE090050BE1F /* GoalCell.swift */; };
 		ACE18F5F1FDECD690050BE1F /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE18F5E1FDECD690050BE1F /* GoalType.swift */; };
 		ACE18F611FDED2D80050BE1F /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE18F601FDED2D80050BE1F /* CreateGoalVC.swift */; };
+		ACE18F631FDED6510050BE1F /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE18F621FDED6510050BE1F /* UIViewControllerExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		ACE18F5C1FDEBE090050BE1F /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		ACE18F5E1FDECD690050BE1F /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		ACE18F601FDED2D80050BE1F /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
+		ACE18F621FDED6510050BE1F /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				AC031FE31FDE526D003D7AFE /* Gradient.swift */,
+				ACE18F621FDED6510050BE1F /* UIViewControllerExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			files = (
 				AC031FBF1FDE4DE5003D7AFE /* GoalsVC.swift in Sources */,
 				AC031FC51FDE4DE5003D7AFE /* GoalsKeeper.xcdatamodeld in Sources */,
+				ACE18F631FDED6510050BE1F /* UIViewControllerExt.swift in Sources */,
 				ACE18F5F1FDECD690050BE1F /* GoalType.swift in Sources */,
 				AC031FBD1FDE4DE5003D7AFE /* AppDelegate.swift in Sources */,
 				ACE18F611FDED2D80050BE1F /* CreateGoalVC.swift in Sources */,
